@@ -1,5 +1,5 @@
 .form-container {
-  margin: 0 40px;
+  margin: 0 3%;
   ion-input {
     --padding-start: 10px;
     --border-color: #DADADA;
@@ -21,7 +21,7 @@
     margin: 60px 0 10px 0;
   }
   .forgot-button, .inscrire-button{
-    --background: var(--ion-color-light);
+    --background: none;
     color: #818181 ;
     font-size: 14px;
     margin: 10px ;
@@ -33,10 +33,13 @@
   }
 }
 .sign-up {
-  display: flex;
+  text-align: center;
   justify-content:center;
   align-items: center;
   color: #818181 ;
+  p{
+    margin-bottom: -5px;
+  }
 }
 .error{
   font-size: 10px !important;

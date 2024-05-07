@@ -13,9 +13,10 @@ import { ApiService } from 'src/app/services/global/api.service';
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.scss'],
+  styleUrls: ['./index.component.scss','./index2.component.scss'],
 })
 export class IndexComponent implements OnInit {
+  favoriteColor: boolean = false;
   randomOffer: any;
   @ViewChild('swiper')
   swiperRef: ElementRef | undefined;
@@ -135,6 +136,7 @@ export class IndexComponent implements OnInit {
       } else {
         this.favoriteService.addToFavorites(product);
       }
+      this.favoriteColor = !this.favoriteColor;
       this.updateFavoriteBadgeCount();
   }
 

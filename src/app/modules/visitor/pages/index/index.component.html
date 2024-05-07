@@ -68,7 +68,7 @@
                     </ion-row>
                   </ion-card-header>
                   <ion-card-content>
-                    <ion-icon class="favorite" size="large" color="light" name="heart-sharp" (click)="toggleFavorite(product)"></ion-icon>
+                    <ion-icon class="favorite" size="large" [color]="favoriteColor ? 'danger' : 'light'" name="heart-sharp" [class.active]="favoriteColor" (click)="toggleFavorite(product)"></ion-icon>
                     <ion-card-title>{{ product.name }}</ion-card-title>
                     <ion-card-subtitle class="brand">{{ product.brand }}</ion-card-subtitle>
                     <ion-grid>

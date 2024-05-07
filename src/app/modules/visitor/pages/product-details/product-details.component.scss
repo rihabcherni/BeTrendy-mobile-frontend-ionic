@@ -1,12 +1,15 @@
 ion-content{
   --background: rgb(247, 247, 247);
 }
+.cart-button{
+  margin: 2px 30px !important;
+}
 .image-container{
   text-align: center;
   padding: 0 20px ;
   width: 100%;
 }
-.product-image{                                                                                                                                                                                                                                      
+.product-image{
   padding: 5px;
   img{
     border-radius: 25px;
@@ -66,13 +69,18 @@ ion-content{
 
 .price{
   text-decoration: line-through;
-  font-size: 14px;
+  font-size: 16px;
 }
 .name-product{
   font-size: 20px;
   color: var(--ion-color-medium);
   font-weight: bold;
   margin-bottom: -10px;
+}
+.title-tab{
+  font-size: 20px;
+  color: var(--ion-color-medium);
+  font-weight: bold;
 }
 .brand{
   font-size: 16px;
@@ -81,7 +89,7 @@ ion-content{
   font-weight: 600;
 }
 .new-price{
-  font-size: 16px;
+  font-size: 18px;
   color: var(--ion-color-primary);
   font-weight: bold;
 }
@@ -95,6 +103,9 @@ ion-progress-bar .progress-bar-fill {
   background-color: var(--ion-color-primary);
 }
 .total-rate{
+  background-color: white;
+  border-radius: 20px;
+  margin: 5px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,11 +123,14 @@ ion-progress-bar .progress-bar-fill {
 }
 .rating{
   align-items: center;
-  display: flex;
   .color-text{
     color: var(--ion-color-secondary);
     font-weight: bold;
   }
+}
+.ratin-box{
+  margin: -30px 0 -25px;
+  align-items: center;
 }
 .reviews-list{
   ion-img{

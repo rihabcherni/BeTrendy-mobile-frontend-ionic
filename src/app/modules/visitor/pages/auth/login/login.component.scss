@@ -1,18 +1,18 @@
 .form-container {
-  margin: 40px;
-  text-align: center;
-
-  ion-item {
+  margin: 40px 3%;
+  ion-input {
     --padding-start: 10px;
     --border-color: #DADADA;
-    margin: 20px 0;
+    margin: 15px 0;
     align-items: center;
+    color: #818181;
   }
-  ion-item ion-label {
+  ion-input ion-label {
     color: #A6A6A6;
   }
-  ion-item ion-icon {
+  ion-input ion-icon {
     color: #c6cbd4;
+    font-size: 25px;
   }
   ion-button {
     height: 45px;
@@ -23,22 +23,30 @@
     font-weight: bold;
     font-size: 16px;
     margin: 60px 0 10px 0;
+    text-align: center;
   }
   ion-button.remove-bg{
     --background: transparent;
+    text-decoration: underline;
     --box-shadow: none;
-    color: var(--ion-color-medium);
+    color: var(--ion-color-secondary);
+    text-align: center;
+    margin-bottom: 15px;
   }
   .inscrire-button{
     color: #f15704 !important;
     font-weight: bold;
     text-decoration: underline;
+    text-align: center;
   }
 }
 .sign-up {
-  display: flex;
   justify-content:center;
   align-items: center;
   color: #818181 ;
+  text-align: center;
+  p{
+    margin: -10px;
+  }
 }
 

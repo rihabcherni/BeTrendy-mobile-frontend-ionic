@@ -43,11 +43,11 @@
           <h2 class="name-product">{{ product.name }}</h2>
           <p class="brand">{{ product.brand }}</p>
           <ion-row class="price-container" *ngIf="product.discount !== '0.00'">
-            <ion-col size="5">
-              <p class="new-price">  ${{ calculateNewPrice(product) }} </p>
-            </ion-col>
             <ion-col>
               <p class="price">${{ product.price }}</p>
+            </ion-col>
+            <ion-col size="5">
+              <p class="new-price">  ${{ calculateNewPrice(product) }} </p>
             </ion-col>
           </ion-row>
           <ion-row class="price-container" *ngIf="product.discount === '0.00'">
@@ -55,12 +55,9 @@
               <p class="new-price">${{ product.price }}</p>
             </ion-col>
           </ion-row>
-          <ion-row class="rating">
+          <ion-row class="rating ratin-box">
             <ion-col size="5.5">
               <app-star-rating [(rating)]="calculatedRating"></app-star-rating>
-            </ion-col>
-            <ion-col size="0.5" class="color-text">
-              <h1>|</h1>
             </ion-col>
             <ion-col size="3.5" class="color-text">
               <p>({{ product.total_reviews }} client)</p>
@@ -72,7 +69,7 @@
         </div>
 
         <div *ngSwitchCase="'details'">
-          <h3>Variants:</h3>
+          <h3 class="title-tab">Variants:</h3>
           <ion-list>
             <ion-item *ngFor="let variant of product.variants">
               <ion-label>{{ variant.color }}, Size: {{ variant.size }}</ion-label>
@@ -82,7 +79,7 @@
         </div>
 
         <div *ngSwitchCase="'reviews'">
-          <h3>Customer Rating & Reviews:</h3>
+          <h3 class="title-tab">Customer Rating & Reviews:</h3>
           <div class="rating">
             <div class="total-rate">
                 <span>{{ calculatedRating.toFixed(2) }}</span>
@@ -125,34 +122,3 @@
   </ion-row>
 </ion-content>
 
-
-<!--
-<ion-content class="ion-padding">
-  <div *ngIf="product">
-
-    <div class="product-properties">
-      <span class="product-size">
-              <h4>Size</h4>
-              <ul class="ul-size">
-                <li>7</li>
-                <li>8</li>
-                <li>9</li>
-                <li class="active">10</li>
-                <li>11</li>
-              </ul>
-            </span>
-      <span class="product-color">
-              <h4>Colour</h4>
-              <ul class="ul-color">
-                <li class="orange active"></li>
-                <li class="green"></li>
-                <li class="yellow"></li>
-              </ul>
-            </span>
-      <span class="product-price">
-              USD<b>23,453</b>
-            </span>
-    </div>
-  </div>
-</ion-content>
- -->
