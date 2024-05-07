@@ -1,0 +1,1 @@
+# be-trendy-ionic-frontend
