@@ -68,7 +68,7 @@
       </ion-list-header>
       <ion-item lines="none" *ngFor="let item of categories" (click)="goToSubcategories(item.id)">
         <ion-thumbnail class="img">
-          <img [src]="item?.image"/>
+          <img [src]="item?.image" alt="img"/>
         </ion-thumbnail>
         <ion-label size="large" class="ion-text-wrap">
           <b>{{item.name}}</b>
