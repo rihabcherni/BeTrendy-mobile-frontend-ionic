@@ -1,0 +1,12 @@
+<app-visitor-header></app-visitor-header>
+
+<ion-content>
+  <ion-grid *ngIf="categories">
+    <ion-row *ngFor="let category of categories" (click)="goToSubcategories(category.id)">
+      <ion-col size="6">
+        <h2 class="title-sub">{{ category.name }}</h2>
+      </ion-col>
+      <ion-col class="img" size="6" style="background-image: url('{{ category.image }}');"></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

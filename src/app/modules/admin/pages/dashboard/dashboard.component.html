@@ -1,0 +1,80 @@
+
+<ion-header class="ion-no-border">
+  <ion-item lines="none">
+   <ion-buttons  slot="start" >
+     <ion-menu-button menu="main-menu"></ion-menu-button >
+   </ion-buttons>
+    <!-- <ion-avatar slot="end">
+      <img src="assets/logo1.png" />
+    </ion-avatar> -->
+  </ion-item>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <div class="main-header"></div>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label>
+          <ion-note color="light" class="ion-margin-start">
+            BE TRENDY, Since
+          </ion-note>
+          <p>
+            <ion-chip color="light">
+              <ion-label class="ion-text-wrap">
+                05/2022
+              </ion-label>
+            </ion-chip>
+          </p>
+        </ion-label>
+      </ion-col>
+      <ion-col size="6" class="ion-text-end">
+        <ion-button color="light" size="small">
+          <ion-text style=" color:rgb(8, 7, 107)">Add Seller</ion-text>
+          <ion-icon name="add" style=" color:rgb(8, 7, 107)" slot="end"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-margin-horizontal ion-margin-top">
+      <ion-col>
+        <!-- <ion-label color="light">
+          <b>All features</b>
+        </ion-label> -->
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-margin-horizontal">
+      <ion-col *ngFor="let item of features" size="6">
+        <ion-card class="ion-text-center">
+          <ion-card-header>
+            <div align="center" >
+              <ion-thumbnail [style.background]="item?.background" style="width: 70px; height: 70px; ">
+                <img [src]="item?.src"  style="width: 40px; height: 40px;" />
+              </ion-thumbnail>
+            </div>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label style="color:rgb(234, 97, 6); font-size: 20px;"> {{ item?.nbr }}</ion-label>
+
+            <ion-label color="dark"> {{ item?.name }}</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-list *ngIf="categories.length>0">
+      <ion-list-header class="title">
+        <ion-label>All categories</ion-label>
+      </ion-list-header>
+      <ion-item lines="none" *ngFor="let item of categories" (click)="goToSubcategories(item.id)">
+        <ion-thumbnail class="img">
+          <img [src]="item?.image"/>
+        </ion-thumbnail>
+        <ion-label size="large" class="ion-text-wrap">
+          <b>{{item.name}}</b>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-grid>
+
+</ion-content>

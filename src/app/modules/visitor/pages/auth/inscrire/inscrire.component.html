@@ -1,0 +1,38 @@
+<app-visitor-header></app-visitor-header>
+
+<ion-content class="ion-padding">
+  <div class="form-container">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+      <ion-input label="FirstName" label-placement="floating" fill="outline" placeholder="Enter firstName" color="warning" type="text" formControlName="first_name"></ion-input>
+      <div *ngIf="registerForm.get('first_name')?.invalid && registerForm.get('first_name')?.touched">
+        <ion-text class="error" color="danger" stacked>First Name is required</ion-text>
+      </div>
+
+      <ion-input label="LastName" label-placement="floating" fill="outline" placeholder="Enter lastName" color="warning" type="text" formControlName="last_name"></ion-input>
+      <div *ngIf="registerForm.get('last_name')?.invalid && registerForm.get('last_name')?.touched">
+        <ion-text class="error"  color="danger" stacked>Last Name is required</ion-text>
+      </div>
+
+      <ion-input label="Email" label-placement="floating" fill="outline" placeholder="Enter Email" color="warning" type="email" formControlName="email"></ion-input>
+      <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+        <ion-text class="error" color="danger" stacked>Email is required and must be a valid email</ion-text>
+      </div>
+
+      <ion-input label="Password" label-placement="floating" fill="outline" placeholder="Enter password" color="warning" type="password" formControlName="password"></ion-input>
+      <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+        <ion-text class="error" color="danger" stacked>Password is required</ion-text>
+      </div>
+
+      <ion-input label="Confirm-Password" label-placement="floating" fill="outline" placeholder="Enter confirm password" color="warning" type="password" formControlName="confirmPassword"></ion-input>
+      <div *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched">
+        <ion-text class="error" color="danger" stacked>Confirm Password is required</ion-text>
+      </div>
+      <ion-button expand="block" shape="round" class="register-button" type="submit" [disabled]="registerForm.invalid">Register</ion-button>
+    </form>
+    <div class="sign-up">
+      Already have an account?
+      <ion-button class="remove-bg inscrire-button" fill="clear" routerDirection="forward" (click)="openLoginPage()">Sign In</ion-button>
+    </div>
+  </div>
+</ion-content>

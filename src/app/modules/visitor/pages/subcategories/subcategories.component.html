@@ -1,0 +1,27 @@
+<ion-header *ngIf="categories" style="background-image: url('{{ categories.image }}');">
+  <ion-row>
+    <ion-col size="1.5"  (click)="goBackToLatestPage()" style="cursor: pointer;">
+      <ion-icon size="large" name="chevron-back-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="10.5">
+      <ion-title class="strokeme">{{ categories.name }}</ion-title>
+      <p class="strokeme2">{{ categories.description }}</p>
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+<ion-content *ngIf="categories">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let subcategory of categories.subcategories" (click)="goToSubcategoriesProduct(subcategory.category, subcategory.id)">
+        <ion-card >
+          <ion-card-header style="background-image: url('{{ subcategory.image }}');">
+          </ion-card-header>
+          <ion-card-content>
+              <h2 class="title-sub">{{ subcategory.name }}</h2>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
