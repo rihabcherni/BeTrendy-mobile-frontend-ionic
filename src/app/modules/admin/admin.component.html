@@ -12,12 +12,12 @@
   <ion-content class="ion-padding">
     <div class="menu-header-bg"></div>
       <div class="header-content">
-        <img src="assets/man.png"  alt='img profil'>
+        <img [src]="photo" alt="img profil">
         <ion-label>
           <h2>
-            Dr. First Name Last Name
+            {{ name }}
           </h2>
-          <p>admin&#64;gmail.com</p>
+          <p>{{ email}}</p>
         </ion-label>
       </div>
 
@@ -37,7 +37,7 @@
       <ion-item>
         <ion-icon name="chatbubble-ellipses-outline"></ion-icon>Messages
       </ion-item>
-      <ion-item>
+      <ion-item href="/admin/review" [class.active]="isPageActive('/admin/review')">
         <ion-icon name="heart-outline"></ion-icon>Reviews
       </ion-item>
       <ion-item href="/admin/profil" [class.active]="isPageActive('/admin/profil')">

@@ -1,3 +1,134 @@
-<p>
-  payment works!
-</p>
+  <ion-header>
+    <ion-row>
+      <ion-col size="2"  (click)="goBackToLatestPage()" style="cursor: pointer;">
+        <ion-icon size="large" name="chevron-back-outline"></ion-icon>
+      </ion-col>
+      <ion-col size="7" sizeLg="8">
+        <h1>Payment</h1>
+      </ion-col>
+    </ion-row>
+  </ion-header>
+
+  <ion-content>
+  <div class="main_content_div">
+  <ion-label>1. Select Your Payment Method</ion-label>
+  <ion-row style="margin-top:20px;">
+  <ion-col size="12">
+    <div class="square_div" (click)="changeMethod(1)" [class.yellow]="id ==1" >
+      <img class="gray_img" *ngIf ="id !=1" src="../../../../../assets/card1.png"  alt=""/>
+      <img class="gray_img" *ngIf ="id ==1" src="../../../../../assets/card1.png"  alt=""/>
+    </div>
+  </ion-col>
+
+      <ion-col size="12">
+        <div class="square_div" (click)="changeMethod(2)" [class.yellow]="id ==2" >
+          <img class="gray_img" *ngIf ="id !=2" src="../../../../../assets/money.png" alt=""/>
+          <img class="gray_img" *ngIf ="id ==2" src="../../../../../assets/money.png" alt=""/>
+
+
+          </div>
+      </ion-col>
+      <ion-col size="12">
+        <div class="square_div" (click)="changeMethod(3)" [class.yellow]="id ==3" >
+          <img class="gray_img" *ngIf ="id !=3" src="../../../../../assets/paypal.png"  alt=""/>
+          <img class="gray_img" *ngIf ="id ==3" src="../../../../../assets/paypal.png"  alt=""/>
+
+
+          </div>
+      </ion-col>
+  </ion-row>
+
+  <ng-container *ngIf="showPaymentForm;">
+    <ion-label>2. Enter Your Card Details</ion-label>
+    <ion-label>Card Number</ion-label>
+
+    <ion-input type="text" placeholder="XXXX-XXXX-XXXX-1212"></ion-input>
+
+    <ion-row>
+      <ion-col size="4" class="left_col">
+        <ion-input type="text" placeholder="MM"></ion-input>
+      </ion-col>
+      <ion-col size="4" >
+        <ion-input type="text" placeholder="YYYY"></ion-input>
+      </ion-col>
+
+        <ion-col size="4" class="right-col">
+          <ion-input type="text" placeholder="CVV"></ion-input>
+        </ion-col>
+
+
+    </ion-row>
+    <ion-button expand="block" fill="clear" shape="round" (click)="confirmPayment()">Pay Now</ion-button>
+  </ng-container>
+
+  <ng-container *ngIf="paypal;">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+          Paypal for PWA
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-grid class="ion-text-center">
+        <ion-row>
+          <ion-col>
+            Use this Pay button in your PWA's payment page with the attached logic.
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-card class="welcome-card">
+        <ion-img src="/assets/paypal.jpg"></ion-img>
+        <ion-card-header>
+          <ion-card-subtitle>Get Started</ion-card-subtitle>
+          <ion-card-title>PayPal Sample</ion-card-title>
+          <ion-row>
+            <ion-col>
+              Total Payment
+            </ion-col>
+            <ion-col>
+            </ion-col>
+          </ion-row>
+        </ion-card-header>
+        <ion-card-content>
+          <div id="paypal-button-container"></div>
+        </ion-card-content>
+      </ion-card>
+      <ion-list lines="none">
+        <ion-list-header>
+          <ion-label>Resources</ion-label>
+        </ion-list-header>
+        <ion-item href="https://ionicframework.com/docs/native/paypal">
+          <ion-icon slot="start" color="medium" name="book"></ion-icon>
+          <ion-label>Paypal Plugin Documentation</ion-label>
+        </ion-item>
+        <ion-item href="https://github.com/paypal/PayPal-Cordova-Plugin">
+          <ion-icon slot="start" color="medium" name="build"></ion-icon>
+          <ion-label>Paypal Plugin Repository</ion-label>
+        </ion-item>
+        <ion-item href="https://enappd.com/blog/paypal-integration-in-ionic-apps-and-pwa/142/">
+          <ion-icon slot="start" color="medium" name="grid"></ion-icon>
+          <ion-label>Ionic 5 - Paypal Integration</ion-label>
+        </ion-item>
+        <ion-item href="https://store.enappd.com">
+          <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
+          <ion-label>More Enappd Starters</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-container>
+  <ng-container *ngIf="money;">
+    <div class="money">
+      <h3>Cash on Delivery</h3>
+      <p>Please have the exact amount ready for payment upon delivery.</p>
+    </div>
+  </ng-container>
+  <div class="back">
+    <ion-button (click)="backStore()" >Back to store</ion-button>
+  </div>
+  </div>
+</ion-content>

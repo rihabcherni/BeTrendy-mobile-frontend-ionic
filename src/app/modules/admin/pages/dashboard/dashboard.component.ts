@@ -13,15 +13,19 @@ import { CategoriesService } from 'src/app/services/categories/categories.servic
 export class DashboardComponent implements OnInit {
   adminCount!: AdminCount;
   features: any[] = [];
-
   categories: Category[] = [];
+  currentDate!: string;
 
   constructor(
     private categoryService: CategoriesService,
     private adminCountService: DashService,
     private router: Router ) {
-    }
-
+      this.setCurrentDate();
+  }
+  setCurrentDate() {
+    const currentDateObj: Date = new Date();
+    this.currentDate = currentDateObj.toLocaleDateString('fr-FR');
+  }
   goToSubcategories(categoryId: number): void {
     console.log(categoryId);
     this.router.navigate([`/admin/category/${categoryId}/subcategories`]);

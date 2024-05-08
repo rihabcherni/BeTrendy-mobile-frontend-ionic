@@ -1,0 +1,31 @@
+<ion-content>
+  <ion-toolbar>
+    <ion-text slot="start" class="title">
+      Reviews
+    </ion-text>
+  </ion-toolbar>
+  <ion-grid class="ion-no-padding">
+    <ion-row class="">
+      <ion-col size="12" *ngFor="let item of features">
+        <ion-card class="ion-text-center">
+          <ion-card-header>
+            <div align="start" class="name-container">
+              <ion-label class="title">{{ item?.name }}</ion-label>
+            </div>
+            <ion-thumbnail [style.background]="item?.background" class="img">
+              <img [src]="item?.photo" alt=""/>
+            </ion-thumbnail>
+          </ion-card-header>
+          <ion-card-content>
+            <div classs="body-container">
+            <ion-label>"{{ item?.testimonial }}"</ion-label></div>
+            <!-- Display stars -->
+            <div align="end" class="star-rating" [style.width.px]="item?.stars_count * 36">
+              <ion-icon *ngFor="let icon of item?.icons" [name]="icon"></ion-icon>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -60,12 +60,16 @@
       </ng-container>
     </ion-row>
     </ng-container>
+    <ion-row>
+
     <ng-container *ngIf="cartItems.length === 0">
-      <div class="center-container">
-        <ion-img src="assets/not-found.PNG" alt="not found" class="not-found"></ion-img>
+      <div class="center-container2">
+        <ion-img src="assets/not-found.PNG" alt="not found"  class="not-found"></ion-img>
         <p>No products found.</p>
       </div>
     </ng-container>
+    </ion-row>
+
   </ion-grid>
   <div class="more-product">
     <p class="msg">Select other products:</p>
@@ -121,7 +125,7 @@
     <p class="price">${{ getTotalSum() }}</p>
     <p class="new-price">${{ getTotalSumDiscount() }}</p>
   </div>
-  <ion-button>
+  <ion-button (click)="showOrderDetails()">
     Checkout
     <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
   </ion-button>

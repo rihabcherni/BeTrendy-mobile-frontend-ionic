@@ -7,7 +7,7 @@ import { Product } from 'src/app/models/Product';
 import { CartService } from 'src/app/services/cart/cart.service';
 import { FavoriteService } from 'src/app/services/favorite/favorite.service';
 import { ApiService } from 'src/app/services/global/api.service';
-import { formatDiscount } from 'src/app/utilities';
+import { formatDiscount, logout } from 'src/app/utilities';
 import Swiper from 'swiper';
 
 @Component({
@@ -58,6 +58,10 @@ export class DashboardComponent  implements OnInit {
     if (!localStorage.getItem('favoriteItems')) {
       localStorage.setItem('favoriteItems', '[]');
     }
+  }
+  logout() {
+    this.router.navigate(['/login']);
+    logout();
   }
   apiUrl = this.apiService.getApiUrl();
 

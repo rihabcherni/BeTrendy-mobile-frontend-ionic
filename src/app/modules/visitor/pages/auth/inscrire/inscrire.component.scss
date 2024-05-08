@@ -3,7 +3,7 @@
   ion-input {
     --padding-start: 10px;
     --border-color: #DADADA;
-    margin: 15px 0;
+    margin: 15px 0 0;
     align-items: center;
     color: #818181;
   }
@@ -12,6 +12,7 @@
   }
   ion-button {
     height: 45px;
+    margin-top: 30px;
     text-transform: capitalize;
     --background: linear-gradient(120deg, #f9b47c 0%, var(--ion-color-primary) 100%);
   }

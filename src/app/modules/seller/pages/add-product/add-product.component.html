@@ -1,19 +1,14 @@
 <ion-content class="product-list-content" [fullscreen]="true">
   <div class="main-header">
     <div class="custom-search-product">
-
     </div>
   </div>
-
-
-
-
   <ion-grid>
     <ion-row>
       <ion-col>
         <ion-label>
           <ion-note color="light" class="ion-margin-start">
-            Welcome !
+            Welcome!
           </ion-note>
           <p>
             <ion-chip color="light">
@@ -26,40 +21,48 @@
       </ion-col>
     </ion-row>
     <ion-row>
-     
-    </ion-row>
-
-
-
-    <ion-row style="position: absolute; top: 200px; width: 100%;">
       <ion-col size="12">
-        <ion-list lines="full" >
+        <ion-list lines="full">
           <ion-item>
-            <ion-label position="stacked" >Title</ion-label>
-            <ion-input type="text" [(ngModel)]="newProduct.title"></ion-input>
+            <ion-label position="stacked">Name</ion-label>
+            <ion-input type="text" [(ngModel)]="newProduct.name"></ion-input>
           </ion-item>
 
           <ion-item>
-            <ion-label position="stacked" >Description</ion-label>
+            <ion-label position="stacked">Description</ion-label>
             <ion-textarea rows="5" [(ngModel)]="newProduct.description"></ion-textarea>
           </ion-item>
 
           <ion-item>
-            <ion-label position="stacked">Image URL</ion-label>
+            <ion-label position="stacked">Price</ion-label>
+            <ion-input type="number" [(ngModel)]="newProduct.price"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Discount</ion-label>
+            <ion-input type="number" [(ngModel)]="newProduct.discount"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Brand</ion-label>
+            <ion-input type="text" [(ngModel)]="newProduct.brand"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Image</ion-label>
             <ion-input type="text" [(ngModel)]="newProduct.image"></ion-input>
           </ion-item>
 
           <ion-item>
-            <ion-label position="stacked" class="ion-text custom-label">Price</ion-label>
-            <ion-input type="number" [(ngModel)]="newProduct.price"></ion-input>
+            <ion-label position="stacked">Subcategory</ion-label>
+            <ion-input type="text" [(ngModel)]="newProduct.subcategory"></ion-input>
           </ion-item>
-            <ion-button  (click)="saveProduct()">Save Product</ion-button>
 
+
+
+          <ion-button (click)="saveProduct()">Save Product</ion-button>
         </ion-list>
       </ion-col>
-    </ion-row>
-    <ion-row>
-     
     </ion-row>
   </ion-grid>
 </ion-content>

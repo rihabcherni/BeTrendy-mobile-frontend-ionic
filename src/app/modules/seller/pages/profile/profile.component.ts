@@ -1,15 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { EditProfileModalComponent } from '../edit-profile-modal/edit-profile-modal.component';
-import { SellerService } from 'src/app/services/seller/seller.service';
-
-// Define an interface for item
-interface Item {
-  title: string;
-  icon: string;
-  background?: string; // Make background property optional
-  color?: string; // Make color property optional
-}
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -17,36 +7,39 @@ interface Item {
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent {
-  seller: any = {};
+  profileForm!: FormGroup;
+  defaultImage = 'assets/seller4.png';
 
-  constructor(private sellerService: SellerService, private modalController: ModalController) {}
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.seller = this.sellerService.getSellerInfo();
+    this.profileForm = this.formBuilder.group({
+      name: ['Mejri Aymen', Validators.required],
+      email: ['aymenmejri@yahoo.com', [Validators.required, Validators.email]],
+      phoneNumber: ['23052740', Validators.required],
+      image: ['assets/seller4.png']
+    });
   }
 
-  async editProfile() {
-    const modal = await this.modalController.create({
-      component: EditProfileModalComponent,
-      componentProps: { seller: this.seller },
-      cssClass: 'edit-profile-modal'
-    });
-
-    await modal.present();
-
-    const { data } = await modal.onWillDismiss();
-    if (data && data.updatedSellerInfo) {
-      this.seller = data.updatedSellerInfo;
-      this.sellerService.updateSellerInfo(data.updatedSellerInfo);
+  updateProfile() {
+    if (this.profileForm.valid) {
+      console.log('Updated Profile:', this.profileForm.value);
+    } else {
+      console.log('Form validation error');
     }
   }
 
-  // Define the getRows method here
-  getRows(): Item[][] {
-    // Example implementation, replace this with your actual logic
-    return [
-      [{ title: 'Option 1', icon: 'options' }, { title: 'Option 2', icon: 'options' }, { title: 'Option 3', icon: 'options' }],
-      [{ title: 'Option 4', icon: 'options' }, { title: 'Option 5', icon: 'options' }, { title: 'Option 6', icon: 'options' }]
-    ];
+  onFileChange(event: any) {
+    const file = event.target.files[0];
+    this.profileForm.patchValue({
+      image: file ? URL.createObjectURL(file) : ''
+    });
   }
+
+  setDefaultImage() {
+    this.profileForm.patchValue({
+      image: this.defaultImage
+    });
+  }
+
 }

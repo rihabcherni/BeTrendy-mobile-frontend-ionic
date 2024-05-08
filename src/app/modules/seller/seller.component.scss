@@ -1,13 +1,40 @@
-ion-header {
-  background-color:white;
-  ion-item {
-
-      ion-avatar {
-          background: white;
-      }
+ion-toolbar{
+  height: 75px;
+  padding: 2px 20px;
+  --background:rgb(234, 97, 6) !important;
+  color:#fff;
+  font-size: 20px;
+  line-height: 75px;
+  img{
+    border-radius: 50%;
+    background-color: white;
+  }
+  ion-title{
+    color: white;
+    font-weight: bold;
   }
 }
+ion-title{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    color:rgb(2, 2, 75);
 
+}
+.menu-header-bg{
+    height:180px;
+    width: 350px;
+    background:rgb(234, 97, 6)  ;
+    background: linear-gradient(90deg , rgb(234, 97, 6)  0% , rgb(185, 83, 16) 100%);
+    box-shadow: 0px 1px 10px rgb(231, 149, 94) ;
+    transform: rotate(-15deg);
+    border-radius: 10px 10px 10px 50px;
+    margin-left: -20px;
+    margin-top: -57px;
+    margin-bottom: 60px;
+}
+.title-weclome{
+  margin:20px 0 -10px;
+}
 ion-content {
   * {
       font-family: lato;
@@ -32,10 +59,6 @@ ion-content {
       ion-row {
           ion-col {
               ion-label {
-                  ion-note {
-                      font-size: 0.7rem;
-                  }
-
                   ion-chip {
                       ion-label {
                           font-size: 1.4rem;

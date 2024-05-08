@@ -18,7 +18,10 @@ export class CartService {
     const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
     return  cartItems.filter((item: any) => item.quantity !== 0).reduce((total: number, item: any) => total + item.quantity, 0);
   }
-
+  clearCart() {
+    localStorage.removeItem('cartItems');
+    this.updateCartItemCount(0);
+  }
 
   getCartItems(): any[] {
     const cartItemsString = localStorage.getItem('cartItems');

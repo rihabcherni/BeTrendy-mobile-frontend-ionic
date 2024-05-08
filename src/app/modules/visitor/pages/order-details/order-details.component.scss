@@ -1,0 +1,279 @@
+.price{
+  text-decoration: line-through;
+  font-size: 14px;
+}
+.brand{
+  font-size: 16px;
+  color: var(--ion-color-secondary);
+  font-weight: 600;
+}
+.new-price{
+  font-size: 16px;
+  color: var(--ion-color-primary);
+  font-weight: bold;
+}
+.price-container{
+  height: 60px;
+  align-items: center;
+}
+.product-panier{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--ion-color-dark);
+  font-size: 14px;
+  margin: 20px 0;
+
+
+  .cart-button-green{
+    margin-left: 3px;
+  }
+  .cart-button-red{
+    margin-right: 3px !important;
+  }
+}
+.left-panier{
+  text-align: center;
+}
+ion-thumbnail{
+  --size: 30%;
+  ion-img{
+    border-radius: 20px;
+  }
+}
+
+
+ion-footer{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--ion-color-tertiary-contrast);
+  padding: 0px 20px;
+  .total{
+    color: var(--ion-color-primary);
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .total-price{
+    display: flex;
+    align-items: center;
+    .price{
+      margin-right: 20px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+.center-container{
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 15%;
+  ion-img{
+    width: 70px;
+  }
+p{
+  color: var(--ion-color-medium-tint);
+  font-weight: bold;
+}
+}
+
+
+.more-product{
+margin: 20px 30px;
+
+
+
+
+.price{
+  text-decoration: line-through;
+  font-size: 16px;
+}
+.brand{
+  font-size: 16px;
+  color: var(--ion-color-secondary);
+  font-weight: 600;
+}
+
+
+.price-container{
+height: 60px;
+align-items: center;
+}
+
+
+.product{
+font-size: 22px;
+color: var(--ion-color-dark-tint);
+}
+
+
+ion-card {
+height: 100%;
+min-width: 220px;
+margin: 5px;
+text-transform: capitalize !important;
+border-radius: 30px;
+
+
+ion-card-title{
+  min-height: 60px;
+  align-items: center;
+  align-items: center;
+  padding: 8px 0 0;
+  font-size: 16px;
+}
+}
+.product-image {
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  ion-row{
+    align-items: center;
+}
+
+
+}
+
+
+.product-image:hover .eye-icon {
+cursor: pointer;
+display: block;
+position: absolute;
+margin-top: 50%;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: var(--ion-color-medium-tint);
+background-color: var(--ion-color-light-shade);
+padding: 15px;
+border-radius: 50px;
+}
+.product-panier{
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: var(--ion-color-primary);
+color: var(--ion-color-light);
+font-size: 20px;
+
+
+
+
+}
+
+
+}
+
+
+ion-toolbar{
+  height: 40px;
+  --background: linear-gradient(to right, rgb(228, 95, 0), rgb(255, 162, 0));
+
+
+  }
+
+
+  .main_content_div{
+  width: 100%;
+  padding:20px;
+
+
+  ion-label{
+  display: block;
+  margin-top:20px;
+  color:
+
+
+  gray;
+
+
+  }
+
+
+  .square_div{
+  background:whitesmoke;
+  width:100%;
+  height:100px;
+  position: relative;
+
+
+
+
+
+
+  }
+  .yellow{
+      background: linear-gradient(to right, rgb(228, 95, 0), rgb(255, 162, 0));
+
+
+  }
+  .gray_img{
+      width:70px;
+position: absolute;
+left:50%;
+top:50%;
+transform: translate(-50%,-50%);
+  }
+
+
+  ion-input, ion-datetime{
+      border:1px solid lightgray;
+      border-radius: 5px;
+      --padding-start:8px;
+      margin-top:15px;
+
+
+
+
+  }
+  .left-col{
+      padding-left:0px;
+  }
+  .right-col{
+      padding-right: 0;;
+
+
+
+
+  }
+
+
+}
+ion-button{
+--background: linear-gradient(to right, rgb(228, 95, 0), rgb(255, 162, 0));
+--border-radius:5px;
+color: white;
+margin-top: 30px;
+}
+ion-header{
+  background: linear-gradient(180deg, #f9b47c 0%, var(--ion-color-primary) 100%);
+  border-radius: 0px 0px 30px 30px;
+  display: block;
+  padding: 0 20px;
+  color: var(--ion-color-light);
+  position: relative;
+  -ms-flex-order: -1;
+  order: -1;
+  width: 100%;
+  z-index: 10;
+  ion-row{
+    align-items: center;
+  }
+  ion-img{
+    width: 100%;
+    max-width: 180px;
+  }
+  h1{
+    font-size: 22px !important;
+    font-weight: bold !important;
+  }
+ }
+

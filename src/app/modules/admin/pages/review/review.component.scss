@@ -1,0 +1,45 @@
+ion-card {
+    box-shadow: -1px 11px 13px -6px rgb(87, 86, 86);
+    border-radius: 10px !important;
+    margin:10px 20px ;
+    position: relative;
+  }
+
+  .img {
+    width: 70px;
+    height: 70px;
+    margin: 10px 20px;
+    img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+  }
+
+  .star-rating {
+    display: flex;
+    font-size: 24px;
+    cursor: pointer;
+    color: rgb(255, 204, 0);
+    margin: 10px;
+  }
+
+  .name-container {
+    position: absolute;
+    bottom: 30px;
+    left: 120px;
+    padding-right: 10px;
+  }
+  .body-container {
+    position: absolute;
+    bottom: 30px;
+    left: 120px;
+    padding-right: 10px;
+  }
+  .title{
+    color: rgba(234, 97, 6, 0.837);
+    font-size: 30px;
+    margin-left: 20px;
+    font-family: serif;
+    font-weight: bold;
+  }

@@ -12,7 +12,7 @@ import { CategoriesComponent } from '../visitor/pages/categories/categories.comp
 import { ProductDetailsComponent } from '../visitor/pages/product-details/product-details.component';
 import { FavoriteComponent } from '../visitor/pages/favorite/favorite.component';
 import { CartVisitorComponent } from '../visitor/pages/cart-visitor/cart-visitor.component';
-
+import { OrderDetailsComponent } from '../visitor/pages/order-details/order-details.component';
 const routes: Routes = [
   {
     path: 'client',
@@ -23,8 +23,8 @@ const routes: Routes = [
       { path: 'dashboard', component: ClientsDashComponent },
       { path: 'cart', component: CartVisitorComponent },
       { path: 'order', component: ClientOrderComponent },
-      { path: 'payment/:id', component: PaymentComponent },
-
+      { path: 'order-details', component: OrderDetailsComponent },
+      { path: 'payement', component: PaymentComponent },
 
       { path: 'product-details/:id', component: ProductDetailsComponent },
       { path: 'favorite', component: FavoriteComponent },

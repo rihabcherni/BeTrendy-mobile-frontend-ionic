@@ -14,12 +14,11 @@ export class ProfileComponent  implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    // Initialize the form with default values or values from your backend
     this.profileForm = this.formBuilder.group({
-      name: ['Mejri Aymen', Validators.required],
-      email: ['aymenmejri@yahoo.com', [Validators.required, Validators.email]],
-      phoneNumber: ['23052740', Validators.required],
-      image: ['assets/seller1.png'] 
+      name: ['Admin admin', Validators.required],
+      email: ['admin@gmail.com', [Validators.required, Validators.email]],
+      phoneNumber: ['21547555', Validators.required],
+      image: ['assets/seller1.png']
     });
   }
 
@@ -39,7 +38,6 @@ export class ProfileComponent  implements OnInit {
   }
 
   setDefaultImage() {
-    // If the image fails to load or is not provided, set a default image
     this.profileForm.patchValue({
       image: this.defaultImage
     });

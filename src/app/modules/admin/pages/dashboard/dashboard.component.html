@@ -13,26 +13,18 @@
 <ion-content [fullscreen]="true" color="light">
   <div class="main-header"></div>
   <ion-grid>
-    <ion-row>
+    <ion-row class="date">
       <ion-col size="6">
         <ion-label>
           <ion-note color="light" class="ion-margin-start">
             BE TRENDY, Since
           </ion-note>
-          <p>
             <ion-chip color="light">
               <ion-label class="ion-text-wrap">
-                05/2022
+                {{ currentDate }}
               </ion-label>
             </ion-chip>
-          </p>
         </ion-label>
-      </ion-col>
-      <ion-col size="6" class="ion-text-end">
-        <ion-button color="light" size="small">
-          <ion-text style=" color:rgb(8, 7, 107)">Add Seller</ion-text>
-          <ion-icon name="add" style=" color:rgb(8, 7, 107)" slot="end"></ion-icon>
-        </ion-button>
       </ion-col>
     </ion-row>
 
@@ -50,7 +42,7 @@
           <ion-card-header>
             <div align="center" >
               <ion-thumbnail [style.background]="item?.background" style="width: 70px; height: 70px; ">
-                <img [src]="item?.src"  style="width: 40px; height: 40px;" />
+                <img [src]="item?.src"  style="width: 40px; height: 40px;" alt='img'/>
               </ion-thumbnail>
             </div>
           </ion-card-header>

@@ -1,43 +1,34 @@
-<ion-content [fullscreen]="true">
+
+
+<ion-content [fullscreen]="true" color="light">
   <ion-grid class="main-header">
     <div align="center">
       <ion-avatar>
-        <img src="https://th.bing.com/th/id/R.b6f68cc0add0b85c614d88383d234d54?rik=FqGw3PQI9rx4zQ&pid=ImgRaw&r=0" />
+        <img alt="" [src]="profileForm.value.image ? profileForm.value.image : 'assets/seller1.png'" (error)="setDefaultImage()">
+        <ion-icon name="add-circle" (click)="fileInput.click()"
+        style="color:rgb(255, 72, 16);background-color: white;border-radius: 50%;
+        margin-left: 75px;margin-top: -70px; width: 40px; height: 40px;"></ion-icon>
+        <input #fileInput type="file" (change)="onFileChange($event)" accept="image/*" style="display: none;">
       </ion-avatar>
-      <!-- Display user's name and email -->
-      <ion-label class="user-info">
-        <h2>{{ seller.name }}</h2>
-        <p>{{ seller.email }}</p>
-      </ion-label>
-      <!-- Edit button -->
-      <ion-button color="warning" fill="outline" (click)="editProfile()">Edit</ion-button>
     </div>
   </ion-grid>
 
-  <ion-list lines="full">
-    <ion-item>
-      <ion-label>
-        <ion-text>Name</ion-text>
-        <p><ion-text color="dark">{{ seller.name }}</ion-text></p>
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <ion-text>Phone</ion-text>
-        <p><ion-text color="dark">{{ seller.phone }}</ion-text></p>
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <ion-text>Email</ion-text>
-        <p><ion-text color="dark">{{ seller.email }}</ion-text></p>
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <ion-text>Address</ion-text>
-        <p><ion-text color="dark">{{ seller.address }}</ion-text></p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+  <form   [formGroup]="profileForm" (ngSubmit)="updateProfile()"  >
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input formControlName="name" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Phone Number</ion-label>
+        <ion-input formControlName="phoneNumber" type="tel"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" type="submit"
+    style="width: 150px; margin-top:10px;text-align: center; margin: auto; font-family:Arial, Helvetica, sans-serif;font-weight: bold;text-transform: capitalize;">Update</ion-button>
+  </form>
 </ion-content>

@@ -9,12 +9,18 @@ import { NavController } from '@ionic/angular';
 })
 
 export class AdminComponent {
+  email:string="";
+  name:string="";
+  photo:string="";
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.email = localStorage.getItem('email') ?? '';
+    this.name = localStorage.getItem('full_name') ?? '';
+    this.photo = localStorage.getItem('photo') ?? 'assets/man.png';
+  }
+
   isPageActive(pageUrl: string): boolean {
     return this.router.isActive(pageUrl, true);
   }
-  
-  
 
 }

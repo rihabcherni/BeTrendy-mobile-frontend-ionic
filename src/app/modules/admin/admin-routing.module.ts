@@ -10,6 +10,7 @@ import { SubcategoryComponent } from './pages/subcategory/subcategory.component'
 import { ProductsComponent } from './pages/products/products.component';
 import { ClientsAdminListComponent } from './pages/clients-admin-list/clients-admin-list.component';
 import { ClientsDetailsAdminComponent } from './pages/clients-details-admin/clients-details-admin.component';
+import { ReviewComponent } from './pages/review/review.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
     children: [
       { path: '', component: DashboardComponent },
       { path: 'sellers', component: SellerListComponent },
+      { path: 'review', component: ReviewComponent },
       { path: 'clients', component: ClientsAdminListComponent },
       { path: 'profil', component: ProfileComponent },
       { path: 'seller-details/:id', component: SellerDetailsComponent },

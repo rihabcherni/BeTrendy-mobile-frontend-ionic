@@ -16,6 +16,8 @@ import { calculateNewPrice, formatDiscount } from 'src/app/utilities';
 export class CartVisitorComponent  implements OnInit {
   products: Product[] = [];
   cartItems: any[] = [];
+  modalController: any;
+
   constructor(private cartService: CartService,
     private navCtrl: NavController,
     private productService: ProductService,
@@ -159,4 +161,13 @@ calculateNewPrice(product: any): number {
   return calculateNewPrice(product)
 }
 
+async showOrderDetails() {
+  const userType = localStorage.getItem('type_user');
+
+  if (userType === 'client') {
+    this.router.navigate(['/client/order-details'], { state: { cartItems: this.cartItems } });
+  } else {
+    this.router.navigate(['/login']);
+  }
+}
 }

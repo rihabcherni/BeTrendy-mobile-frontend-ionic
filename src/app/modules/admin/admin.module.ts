@@ -14,6 +14,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { StarComponent } from './components/star/star.component';
 import { ClientsAdminListComponent } from './pages/clients-admin-list/clients-admin-list.component';
 import { ClientsDetailsAdminComponent } from './pages/clients-details-admin/clients-details-admin.component';
+import { ReviewComponent } from './pages/review/review.component';
 @NgModule({
   declarations: [
     AdminComponent,
@@ -26,7 +27,8 @@ import { ClientsDetailsAdminComponent } from './pages/clients-details-admin/clie
     ProductsComponent,
     StarComponent,
     ClientsAdminListComponent,
-    ClientsDetailsAdminComponent
+    ClientsDetailsAdminComponent,
+    ReviewComponent
   ],
   imports: [
     CommonModule,

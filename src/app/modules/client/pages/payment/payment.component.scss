@@ -1,0 +1,181 @@
+ion-toolbar{
+  --background: linear-gradient(to right, rgb(228, 95, 0), rgb(255, 162, 0));
+
+  }
+
+  .main_content_div{
+  width: 100%;
+  padding:20px;
+
+  ion-label{
+  display: block;
+  margin-top:20px;
+  color:
+
+  gray;
+
+  }
+
+  .square_div{
+  background:whitesmoke;
+  width:100%;
+  height:100px;
+  position: relative;
+
+
+
+  }
+  .yellow{
+      background: linear-gradient(to right, rgb(228, 95, 0), rgb(255, 162, 0));
+
+  }
+  .gray_img{
+      width:70px;
+position: absolute;
+left:50%;
+top:50%;
+transform: translate(-50%,-50%);
+  }
+
+  ion-input, ion-datetime{
+      border:1px solid lightgray;
+      border-radius: 5px;
+      --padding-start:8px;
+      margin-top:15px;
+
+
+  }
+  .left-col{
+      padding-left:0px;
+  }
+  .right-col{
+      padding-right: 0;;
+
+
+  }
+  ion-button{
+      --background: linear-gradient(to right, rgb(228, 95, 0), rgb(255, 162, 0));
+      --border-radius:5px;
+      color: white;
+      margin-top: 30px;
+  }
+}
+.alert-head{
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  margin: 10px;
+}
+.alert-message.sc-ion-alert-md, .alert-input-group.sc-ion-alert-md {
+  padding: 0 15px !important;
+}
+.alert-input{
+  border: 3px solid rgb(228, 95, 0) !important;
+  padding: 10px;
+  border-radius: 8px;
+  &:focus,
+  &:hover {
+    border:3px solid rgb(255, 162, 0) !important;
+  }
+}
+.alert-wrapper.sc-ion-alert-md{
+  min-width: 400px !important;
+}
+.alert-button-group.sc-ion-alert-md {
+  justify-content: center !important;
+}
+.alert-button.sc-ion-alert-md {
+  background-color: rgb(228, 95, 0);
+  color: var(--ion-color-light) !important;
+  font-weight: bold;
+  width: 120px;
+  border-radius: 10px;
+  align-content: center;
+}
+.alert-button-inner.sc-ion-alert-md {
+  justify-content: center;
+}
+.alert-wrapper {
+  border-radius: 35px;
+  height: 55%;
+  border: 5px dashed rgb(228, 95, 0);
+  .container{
+    text-align: center;
+    h2{
+      color: rgb(255, 106, 0);
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    p{
+      color: rgb(108, 108, 108);
+      font-size: 14px;
+      margin: 10px;
+    }
+  }
+}
+ion-header{
+  background: linear-gradient(180deg, #f9b47c 0%, var(--ion-color-primary) 100%);
+  border-radius: 0px 0px 30px 30px;
+  display: block;
+  padding: 0 20px;
+  color: var(--ion-color-light);
+  position: relative;
+  -ms-flex-order: -1;
+  order: -1;
+  width: 100%;
+  z-index: 10;
+  ion-row{
+    align-items: center;
+  }
+  ion-img{
+    width: 100%;
+    max-width: 180px;
+  }
+  h1{
+    font-size: 22px !important;
+    font-weight: bold !important;
+  }
+ }
+ .paypal{
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+ }
+ .money{
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  p,h3{
+    text-align: center;
+  }
+  h3{
+    color: var(--ion-color-primary);
+  }
+  p{
+    color: var(--ion-color-meduim);
+  }
+ }
+.back{
+  align-items: center;
+  text-align: center;
+}
+
+.welcome-card {
+  max-width: 50vw;
+  margin-left: auto;
+  margin-right: auto;
+  ion-img {
+    max-height: 35vh;
+    overflow: hidden;
+  }
+  ion-card-header {
+    max-width: 30vw;
+    margin: auto;
+  }
+  ion-card-content {
+    max-width: 30vw;
+    margin: auto;
+  }
+}

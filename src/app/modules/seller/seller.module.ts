@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SellerRoutingModule } from './seller-routing.module';
 import { AddProductComponent } from './pages/add-product/add-product.component';
 import { EditProfileModalComponent } from './pages/edit-profile-modal/edit-profile-modal.component';
@@ -16,7 +16,8 @@ import { SellerComponent } from './seller.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    SellerRoutingModule
+    SellerRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [ProductListComponent,ProfileComponent,SellerComponent, ProductDetailsModalComponent, AddProductComponent, EditProfileModalComponent]
 })

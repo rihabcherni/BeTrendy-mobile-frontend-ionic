@@ -1,12 +1,12 @@
 
 
-  
+
   ion-content {
     * {
       font-family: lato;
     }
-  
-  
+
+
    .main-header {
     height: 30vh;
     width: 120%;
@@ -28,7 +28,7 @@
   }
 
   ion-list{
-    margin-top: 30px;
+    margin: 30px 20px;
     ion-item{
         margin-top: 1vh;
         ion-label{
@@ -42,5 +42,5 @@
       }
     }
   }
-   
+
   }

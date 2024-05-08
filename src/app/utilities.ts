@@ -17,3 +17,14 @@ export function calculateNewPrice(product: any): number {
   return price - (price * (discount / 100));
 }
 
+
+
+export function logout() {
+  localStorage.removeItem('access_token');
+  localStorage.removeItem('full_name');
+  localStorage.removeItem('email');
+  localStorage.removeItem('photo');
+  localStorage.removeItem('favoriteItems');
+  localStorage.removeItem('type_user');
+  localStorage.removeItem('cartItems');
+}

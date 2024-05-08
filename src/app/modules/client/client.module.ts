@@ -7,6 +7,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ClientsDashComponent } from './pages/clients-dash/clients-dash.component';
+import { OrderDetailsComponent } from '../visitor/pages/order-details/order-details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -16,12 +18,15 @@ import { ClientsDashComponent } from './pages/clients-dash/clients-dash.componen
     DashboardComponent,
     PaymentComponent,
     ProfileComponent,
-    ClientsDashComponent
+    ClientsDashComponent,
+    OrderDetailsComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    ReactiveFormsModule,
+    FormsModule,
   ]
 })
 export class ClientModule { }
