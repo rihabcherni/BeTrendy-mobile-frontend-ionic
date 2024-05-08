@@ -29,7 +29,7 @@ To get started with the Be-Trendy app, follow these steps:
 1. **Clone the repository**:
 
    ```
-   git clone https://github.com/yourusername/be-trendy-ionic-frontend.git
+   git clone https://github.com/rihabcherni/be-trendy-ionic-frontend
    ```
 
 2. **Navigate to the project directory**:
