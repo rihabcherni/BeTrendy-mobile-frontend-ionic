@@ -4,7 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { CartVisitorComponent } from './cart-visitor.component';
 
 describe('CartVisitorComponent', () => {
-  let component: CartVisitorComponent;
+  let component: CartVisitorComponent; 
   let fixture: ComponentFixture<CartVisitorComponent>;
 
   beforeEach(waitForAsync(() => {

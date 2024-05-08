@@ -7,7 +7,8 @@ import { FavoriteService } from 'src/app/services/favorite/favorite.service';
 import { ProductService } from 'src/app/services/product/product.service';
 import { VisitorHeaderService } from 'src/app/services/visitor-header/visitor-header.service';
 import { calculateNewPrice, formatDiscount } from 'src/app/utilities';
-
+import { OrderDetailsPage } from '../order-details/order-details.page';
+ 
 @Component({
   selector: 'app-cart-visitor',
   templateUrl: './cart-visitor.component.html',
@@ -16,6 +17,7 @@ import { calculateNewPrice, formatDiscount } from 'src/app/utilities';
 export class CartVisitorComponent  implements OnInit {
   products: Product[] = [];
   cartItems: any[] = [];
+  modalController: any;
   constructor(private cartService: CartService,
     private navCtrl: NavController,
     private productService: ProductService,
@@ -157,6 +159,19 @@ export class CartVisitorComponent  implements OnInit {
 }
 calculateNewPrice(product: any): number {
   return calculateNewPrice(product)
+}
+
+
+async showOrderDetails() {
+  const userType = localStorage.getItem('type_user');
+
+  if (userType === 'client') {
+    this.router.navigate(['order-details'], { state: { cartItems: this.cartItems } });
+
+    //this.router.navigate(['/client/order']);
+  } else {
+    this.router.navigate(['/login']);
+  }
 }
 
 }

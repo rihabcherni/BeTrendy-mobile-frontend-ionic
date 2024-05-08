@@ -88,7 +88,7 @@
                 <ion-row class="price-container">
                   <ion-col size="9" *ngIf="product.discount !== '0'">
                     <p class="price">${{ product.price }}</p>
-                  </ion-col>
+                  </ion-col> 
                   <ion-col size="9" *ngIf="product.discount === '0.00'">
                     <p class="new-price">${{ product.price }}</p>
                   </ion-col>
@@ -121,7 +121,7 @@
     <p class="price">${{ getTotalSum() }}</p>
     <p class="new-price">${{ getTotalSumDiscount() }}</p>
   </div>
-  <ion-button>
+  <ion-button (click)="showOrderDetails()">
     Checkout
     <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
   </ion-button>

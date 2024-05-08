@@ -11,7 +11,7 @@ export class CartService {
   constructor() { }
 
   updateCartItemCount(count: number) {
-    this.cartItemCountSource.next(count);
+    this.cartItemCountSource.next(count); 
   }
 
   calculateTotalQuantity(): number {
@@ -23,5 +23,9 @@ export class CartService {
   getCartItems(): any[] {
     const cartItemsString = localStorage.getItem('cartItems');
     return cartItemsString ? JSON.parse(cartItemsString) : [];
+  }
+  clearCart() {
+    localStorage.removeItem('cartItems');
+    this.updateCartItemCount(0);
   }
 }

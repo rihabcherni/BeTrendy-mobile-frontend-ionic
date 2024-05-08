@@ -19,6 +19,7 @@ import { SubcategoriesProductsComponent } from './pages/subcategories-products/s
 import { FavoriteComponent } from './pages/favorite/favorite.component';
 import { RoleTypeComponent } from './pages/auth/role-type/role-type.component';
 import { RestPasswordModalComponent } from './pages/auth/rest-password-modal/rest-password-modal.component';
+import { OrderDetailsPage } from './pages/order-details/order-details.page';
 
 const routes: Routes = [
   {
@@ -46,7 +47,16 @@ const routes: Routes = [
       { path: 'forgot-password', component: ForgotPasswordComponent },
       { path: 'reset-password/:uidb64/:token', component: RestPasswordModalComponent },
     ]
+  },
+  {
+    path: 'order-details',
+    loadChildren: () => import('./pages/order-details/order-details.module').then( m => m.OrderDetailsPageModule)
+  },  {
+    path: 'payement',
+    loadChildren: () => import('./pages/payement/payement.module').then( m => m.PayementPageModule)
   }
+
+
 ];
 
 @NgModule({

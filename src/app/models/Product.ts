@@ -44,4 +44,4 @@ export interface Review {
   user: number;
   user_name: string;
   user_image: string;
-}
+} 

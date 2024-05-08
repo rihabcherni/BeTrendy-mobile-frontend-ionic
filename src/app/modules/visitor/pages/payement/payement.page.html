@@ -1,0 +1,67 @@
+
+<ion-header>
+  <ion-toolbar>
+<ion-buttons slot='start'>
+  <ion-back-button color="light" defaultHref="home" >
+
+  </ion-back-button>
+  </ion-buttons>
+  <ion-title color="light">Payment</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+  
+  </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  <div class="main_content_div">
+  <ion-label>1. Select Your Payment Method</ion-label>
+  <ion-row style="margin-top:20px;">
+  <ion-col size="4">
+    <div class="square_div" (click)="changeMethod(1)" [class.yellow]="id ==1" >
+      <img class="gray_img" *ngIf ="id !=1" src="../../../../../assets/card1.png" />
+      <img class="gray_img" *ngIf ="id ==1" src="../../../../../assets/card1.png" />
+
+
+      </div>
+      </ion-col>
+
+      <ion-col size="4">
+        <div class="square_div" (click)="changeMethod(2)" [class.yellow]="id ==2" >
+          <img class="gray_img" *ngIf ="id !=2" src="../../../../../assets/money.png" />
+          <img class="gray_img" *ngIf ="id ==2" src="../../../../../assets/money.png" />
+    
+    
+          </div>
+          </ion-col>
+           <ion-col size="4">
+        <div class="square_div" (click)="changeMethod(3)" [class.yellow]="id ==3" >
+          <img class="gray_img" *ngIf ="id !=3" src="../../../../../assets/paypal.png" />
+          <img class="gray_img" *ngIf ="id ==3" src="../../../../../assets/paypal.png" />
+    
+    
+          </div>
+          </ion-col>
+  </ion-row>
+  <ion-label>2. Enter Your Card Details</ion-label>
+<ion-label>Card Number</ion-label>
+
+<ion-input type="text" placeholder="XXXX-XXXX-XXXX-1212"></ion-input>
+
+<ion-row>
+  <ion-col size="4" class="left_col">
+    <ion-input type="text" placeholder="MM"></ion-input>
+  </ion-col>
+  <ion-col size="4" >
+    <ion-input type="text" placeholder="YYYY"></ion-input>
+  </ion-col>
+    
+    <ion-col size="4" class="right-col">
+      <ion-input type="text" placeholder="CVV"></ion-input>
+    </ion-col>
+    
+    
+  </ion-row>
+  <ion-button expand="block" fill="clear" shape="round" (click)="confirmPayment()">Pay Now</ion-button>
+  </div>
+  </ion-content>
