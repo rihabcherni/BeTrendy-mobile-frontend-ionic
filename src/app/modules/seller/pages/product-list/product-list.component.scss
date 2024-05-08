@@ -1,9 +1,9 @@
 ion-content.product-list-content {
- 
+
     * {
       font-family: lato;
     }
-  
+
     .main-header {
       height: 45vh;
       width: 150%;
@@ -13,7 +13,7 @@ ion-content.product-list-content {
       margin-left: -14vh;
       margin-top: -60px;
     }
-    
+
     ion-grid {
       width: 100%;
       position: absolute;
@@ -52,7 +52,7 @@ ion-content.product-list-content {
               font-size: 1rem;
             }
           }
-          
+
         }
       }
       ion-list {
@@ -80,24 +80,23 @@ ion-content.product-list-content {
     border-radius: 0 0 50% 50%;
     margin-left: -14vh;
     margin-top: -60px;
-    position: relative; /* Add this line */
-  
+    position: relative; 
     .caption {
       font-size: 2rem;
       color: white;
       text-align: center;
-      padding-top: 20px; // Adjust as needed
-      position: absolute; /* Change to absolute */
-      bottom: 0; /* Position at the bottom of the .main-header */
+      padding-top: 20px;
+      position: absolute;
+      bottom: 0;
       left: 0;
       width: 100%;
     }
   }
-  
+
   .custom-search-product {
     position: absolute;
     bottom: 0;
-    width: 63%; 
+    width: 63%;
     left: 120px;
     background: white;
     margin: 16px 26px 16px 26px;
@@ -105,7 +104,7 @@ ion-content.product-list-content {
     border-radius: 20px;
     box-shadow: 0px 3px 12px 2px rgba(0, 0, 0, 0.16);
   }
-  
+
     ion-card {
         box-shadow: -1px 11px 13px -6px rgb(60, 58, 58);
         border-radius: 40px !important;
@@ -134,14 +133,14 @@ ion-content.product-list-content {
       border-radius: 8px;
       margin-bottom: 12px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  
+
       ion-thumbnail {
         width: 80px;
         height: 80px;
         border-radius: 50%;
         margin-right: 12px;
       }
-  
+
       ion-label {
         h2 {
           color: #333;
@@ -157,7 +156,7 @@ ion-content.product-list-content {
           margin-bottom: 0;
         }
       }
-  
+
       ion-button {
         --background: orange;
         --color: #fff;
@@ -167,5 +166,5 @@ ion-content.product-list-content {
         margin-left: 6px;
       }
     }
-  
+
 

@@ -1,4 +1,3 @@
-// product-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ProductDetailsModalComponent } from '../../components/product-details-modal/product-details-modal.component';
@@ -20,10 +19,11 @@ export class ProductListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.productService.products$.subscribe(products => {
-      this.products = products;
+    const storedProducts = localStorage.getItem('products');
+    if (storedProducts) {
+      this.products = JSON.parse(storedProducts);
       this.filteredProducts = this.products;
-    });
+    }
   }
 
   async viewDetails(product: any) {
@@ -39,13 +39,13 @@ export class ProductListComponent implements OnInit {
   deleteProduct(productId: number) {
     const index = this.products.findIndex(product => product.id === productId);
     if (index !== -1) {
-      this.products.splice(index, 1); // Remove the product at the found index
+      this.products.splice(index, 1);
       console.log('Product deleted with ID:', productId);
+      localStorage.setItem('products', JSON.stringify(this.products));
     } else {
       console.error('Product with ID:', productId, 'not found.');
     }
   }
-
   filterProducts() {
     if (this.searchTerm.trim() === '') {
       this.filteredProducts = this.products;

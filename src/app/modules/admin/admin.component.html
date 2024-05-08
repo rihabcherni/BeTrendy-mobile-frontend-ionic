@@ -7,6 +7,8 @@
       <ion-title>
         Be-Trendy
       </ion-title>
+
+
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
@@ -33,14 +35,14 @@
       <ion-item href="/admin/clients" [class.active]="isPageActive('/admin/clients')">
         <ion-icon name="people"></ion-icon>Clients
       </ion-item>
-      
+
       <ion-item href="/admin/review" [class.active]="isPageActive('/admin/review')">
         <ion-icon name="heart-outline"></ion-icon>Reviews
       </ion-item>
       <ion-item href="/admin/profil" [class.active]="isPageActive('/admin/profil')">
         <ion-icon name="person"></ion-icon>Profil
       </ion-item>
-      <ion-item>
+      <ion-item href="/home">
         <ion-icon name="exit-outline"></ion-icon>Sign out
       </ion-item>
      </ion-list>

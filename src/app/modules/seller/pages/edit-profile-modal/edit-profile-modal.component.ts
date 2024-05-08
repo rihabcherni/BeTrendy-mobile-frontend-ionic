@@ -7,7 +7,7 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./edit-profile-modal.component.scss'],
 })
 export class EditProfileModalComponent {
-  @Input() seller: any; // Input property to receive seller's information
+  @Input() seller: any;
 
   constructor(private modalController: ModalController) {}
 

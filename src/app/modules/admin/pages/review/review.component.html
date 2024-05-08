@@ -19,7 +19,6 @@
           <ion-card-content>
             <div classs="body-container">
             <ion-label>"{{ item?.testimonial }}"</ion-label></div>
-            <!-- Display stars -->
             <div align="end" class="star-rating" [style.width.px]="item?.stars_count * 36">
               <ion-icon *ngFor="let icon of item?.icons" [name]="icon"></ion-icon>
             </div>

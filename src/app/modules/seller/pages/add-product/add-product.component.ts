@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product/product.service';
 
@@ -8,15 +9,49 @@ import { ProductService } from 'src/app/services/product/product.service';
   styleUrls: ['./add-product.component.scss'],
 })
 export class AddProductComponent {
-  newProduct: any = {}; // Object to hold the new product data
+  newProduct: any = {
+    image: 'assets/not-found.PNG'
+  };
 
-  constructor(private router: Router, private productService: ProductService) {} // Inject ProductService
+  profileForm!: FormGroup;
+  defaultImage = 'assets/not-found.PNG';
+
+  constructor(
+    private router: Router,
+    private productService: ProductService,
+    private fb: FormBuilder
+  ) {
+    this.profileForm = this.fb.group({
+      image: ['']
+    });
+  }
 
   saveProduct() {
     console.log('New Product:', this.newProduct);
-    // Create a new object for each new product being added
     const newProductCopy = { ...this.newProduct };
-    this.productService.addProduct(newProductCopy);
+    const products = JSON.parse(localStorage.getItem('products') || '[]');
+    products.push(newProductCopy);
+    localStorage.setItem('products', JSON.stringify(products));
     this.router.navigate(['/seller/products-list']);
   }
+
+  onFileChange(event: any) {
+    const file = event.target.files[0];
+    const imageUrl = file ? URL.createObjectURL(file) : '';
+    if (imageUrl) {
+      this.newProduct.image = imageUrl;
+      const tempImage = this.newProduct.image;
+      this.newProduct = { image: imageUrl };
+      setTimeout(() => {
+        this.newProduct = { image: tempImage, ...this.newProduct };
+      }, 0);
+    }
+  }
+
+  setDefaultImage() {
+    this.profileForm.patchValue({
+      image: this.defaultImage
+    });
+  }
+
 }

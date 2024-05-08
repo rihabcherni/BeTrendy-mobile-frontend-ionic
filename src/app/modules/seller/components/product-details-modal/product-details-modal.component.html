@@ -1,17 +1,18 @@
 <div class="wrapper">
   <div >
     <div class="product-img">
-      <img [src]="product.image" alt="{{ product.name }}" height="420" width="327">
+      <img [src]="product.image" alt="{{ product.name }}" height="150" width="150">
     </div>
     <div class="product-info">
       <div class="product-text">
-        <h1>{{ product.name }}</h1>
-        <h2>Here are the details of the product you added:</h2>
-        <!-- <p>{{ product.description }}</p> -->
+        <h1 style="color:gray">{{ product.name }}</h1>
+        <h2 style="color:gray">Here are the details of the product you added:</h2>
+        <p><b style="color:gray">Description:</b>{{ product.description }}</p>
+        <p><b style="color:gray">Discount:</b>{{ product.discount }}</p>
       </div>
       <div class="product-price-btn">
-        <p><strong>Price:</strong> {{ product.price | currency }}</p>
-       <div> <button  expand="block" (click)="dismiss()" class="close-button">Close</button></div>
+        <p><strong style="color:gray">Price:</strong> {{ product.price | currency }}</p>
+       <div> <ion-button  expand="block" (click)="dismiss()" class="close-button">Close</ion-button ></div>
       </div>
     </div>
   </div>

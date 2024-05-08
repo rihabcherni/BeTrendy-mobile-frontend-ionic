@@ -7,13 +7,13 @@
       </ion-item>
     </div>
   </div>
-  
+
   <ion-grid>
     <ion-row>
       <ion-col>
         <ion-label>
           <ion-note color="light" class="ion-margin-start">
-            Welcome ! 
+            Welcome !
           </ion-note>
           <p>
             <ion-chip color="light">
@@ -26,15 +26,15 @@
       </ion-col>
     </ion-row>
     <ion-row>
-     
-   </ion-row> 
+
+   </ion-row>
     <ion-row>
       <ion-col>
-        <ion-label color="light"> 
+        <ion-label color="light">
         </ion-label>
       </ion-col>
     </ion-row>
-    
+
 
     <ion-row  style="position: absolute; top: 200px; width: 100%;">
       <ion-col size="12">
@@ -48,14 +48,12 @@
               <p>{{ product.description }}</p>
               <p>Price: {{ product.price | currency }}</p>
             </ion-label>
-            <ion-buttons slot="end"> <!-- Changed to ion-buttons -->
-              <!-- Delete button with trash icon -->
+            <ion-buttons slot="end">
               <ion-button color="danger" fill="clear" (click)="deleteProduct(product.id)">
-                <ion-icon slot="icon-only" name="trash" size="large"></ion-icon> <!-- Increased icon size -->
+                <ion-icon slot="icon-only" name="trash" size="large"></ion-icon>
               </ion-button>
-              <!-- View Details button with eye icon -->
               <ion-button color="warning" fill="clear" (click)="viewDetails(product)">
-                <ion-icon slot="icon-only" name="eye" size="large"></ion-icon> <!-- Increased icon size -->
+                <ion-icon slot="icon-only" name="eye" size="large"></ion-icon>
               </ion-button>
             </ion-buttons>
           </ion-item>

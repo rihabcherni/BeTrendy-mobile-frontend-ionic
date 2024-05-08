@@ -42,38 +42,35 @@ ion-content {
             }
 
             ion-button {
-                --background: rgb(187, 93, 0); // Orange color for background
-                font-size: 20px; // Larger font size
-                border-radius: 20px; // Rounded corners
+                --background: rgb(187, 93, 0);
+                font-size: 14px;
+                border-radius: 20px;
                 font-weight: bold;
-                width: 200px;
                 height: 50px;
-                margin-bottom: 7vh;
-                align-items: center;
-                transform: translateX(160vh);
+                margin-bottom: 2vh;
+                width: 80%;
 
-
-
+            }
+            .center{
+              align-items: center;
+              text-align: center;
             }
         }
         ion-list {
             background: transparent;
-
+            margin-top: 80px;
             ion-item {
               width: 95%;
               margin: auto;
               --border-radius: 20px;
-              margin-bottom: 7vh;
               box-shadow: black;
-
+              border: 1 solid gray;
               ion-label {
                 font-size: 1.2rem;
               }
 
-              /* CSS for hover effect on ion-input */
               ion-input:hover {
                 border-color: orangered !important;
-                /* Example color for border change on hover */
               }
 
               p {
@@ -87,4 +84,20 @@ ion-content {
           }
 
     }
+}
+
+.image-container ion-img {
+  width: 120px !important; 
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.add-icon {
+  color: rgb(255, 72, 16);
+  background-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: -75px;
 }
